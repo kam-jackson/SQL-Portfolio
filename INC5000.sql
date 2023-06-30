@@ -90,4 +90,11 @@ FROM companies
 GROUP BY name, new_hires
 ORDER BY new_hires DESC;
 
+-- 7) Which are the top 5 states represented on the 'INC 5000' list? 
+SELECT state, COUNT (*) AS state_rank
+FROM companies
+GROUP BY state
+ORDER BY state_rank DESC
+LIMIT 5;
+
 
