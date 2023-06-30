@@ -2,6 +2,11 @@
 
 Project 1 - INC 5000
 
+As my first SQL project, I have decided to use a data set from the 2019 "INC 5000", 
+and analyze the relationships of the given data to answer a 
+variety of questions. By analyzing this data, I have been able to use Tablueau.Public to
+prepare a dashboard that visualizes the data, which has allowed me to draw meaningful conlcusions.
+
 */
 
 -- Table Creation
@@ -96,5 +101,7 @@ FROM companies
 GROUP BY state
 ORDER BY state_rank DESC
 LIMIT 5;
+
+
 
 
