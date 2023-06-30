@@ -77,8 +77,17 @@ FROM companies
 GROUP BY name
 ORDER BY avg_rev_growth DESC;
 
+-- New column titled "new_hires" for calculating amount of new employees
+ALTER TABLE companies
+ADD new_hires INTEGER;
+
+UPDATE companies
+SET new_hires = workers - previous_workers;
+
 -- 6) Which companies had the largest increase in staff? 
-SELECT name, industry, (previous_workers - workers) AS new_hires
+SELECT name, new_hires
 FROM companies
-GROUP BY name, industry, previous_workers, workers
+GROUP BY name, new_hires
 ORDER BY new_hires DESC;
+
+
